@@ -8,13 +8,13 @@ const HeroImage = ({ movie }: any) => {
     router.push("/movie/" + movie.id);
   };
   return (
-    <div className="relative w-full  rounded-md md:h-[450px] bg-red-400 overflow-hidden shadow-lg">
+    <div className="relative w-full  rounded-md md:h-[450px] bg-red-400 border-none overflow-hidden shadow-lg">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
         alt={movie.original_title}
         className="relative h-full w-full object-cover z-[1]"
       />
-      <div className="absolute h-full top-0 flex flex-col items-start text-white left-0 bottom-0 w-[70%]  bg-gradient-to-r from-slate-900 to-transparent z-[2] p-3 md:p-10">
+      <div className="absolute h-full top-0 flex flex-col items-start text-white -left-1 bottom-0 w-[70%]  bg-gradient-to-r from-slate-900 to-transparent z-[2] p-3 md:p-10">
         <h1 className="lg:text-[40px] sm:text-[24px] md:text-[30px] text-[16px] font-bold">
           {movie.original_title}
         </h1>

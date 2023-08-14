@@ -13,6 +13,11 @@ const Hero = ({ movies }: any) => {
   return (
     <section className=" pt-4">
       <div className="container mx-auto px-4">
+        <div>
+          <h1 className="lg:text-[50px] my-4 font-semibold  text-[40px] text-color3 text-center">
+            RafMovies
+          </h1>
+        </div>
         <div className=" flex">
           <Swiper
             slidesPerView={1}
@@ -30,7 +35,7 @@ const Hero = ({ movies }: any) => {
             className="mySwiper  "
           >
             {heroMovies.map((movie, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="overflow-hidden border-none">
                 <HeroImage movie={movie} />
               </SwiperSlide>
             ))}

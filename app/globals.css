@@ -28,7 +28,7 @@ body {
   );
 }
 .navIcon {
-  @apply w-[28px] h-[28px] mr-5;
+  @apply w-[28px] h-[28px] md:mr-5;
 }
 .navTitle {
   @apply hidden md:block md:text-sm xl:text-base font-semibold;
