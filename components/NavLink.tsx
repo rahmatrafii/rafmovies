@@ -20,7 +20,7 @@ const NavLink = ({ href, title, icon }: NavType) => {
       href={href}
       className={`${
         pathName === `${href}` ? "text-color2" : "text-slate-300"
-      } bg-red-500 md:hover:bg-color3 transition duration-300 py-3 px-3 rounded-sm hover:bg-opacity-60 flex  items-center justify-center`}
+      }  md:hover:bg-color3 transition duration-300 py-3 px-3 rounded-sm hover:bg-opacity-60 flex  items-center justify-center`}
     >
       {icon}
       <span className="navTitle">{title}</span>
