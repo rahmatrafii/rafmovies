@@ -5,11 +5,9 @@ import { getPopular } from "@/utils";
 const Movie = async () => {
   const res = await getPopular();
   const movies = res.results;
-  console.log(movies);
   return (
     <section className="md:ml-[195px] pb-20">
       <div className="container px-4 mx-auto">
-        <NavSearch />
         <div className="w-full flex flex-wrap justify-evenly items-center gap-2 pt-5">
           {movies.map((movie: any, index: number) => (
             <MovieCard

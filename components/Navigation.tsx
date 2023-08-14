@@ -5,6 +5,8 @@ import LiveTvIcon from "@mui/icons-material/LiveTv";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import NavLink from "./NavLink";
+import { FaSearch } from "react-icons/fa";
+
 const DesktopNavigation = () => {
   return (
     <header className="z-[9999] Navbackground fixed md:top-0 md:left-0  md:h-screen  md:pt-10 bottom-0 left-0  h-[60px] w-full md:w-[180px] xl:w-[190px] mr-20">
@@ -15,20 +17,21 @@ const DesktopNavigation = () => {
             href="/"
             title="Home"
           />
+
+          <NavLink
+            icon={<FaSearch className="navIcon" />}
+            href="/search"
+            title="Search"
+          />
           <NavLink
             icon={<BiSolidCameraMovie className="navIcon" />}
             href="/movies"
             title="Movies"
           />
           <NavLink
-            icon={<LiveTvIcon className="navIcon" />}
-            href="/tv-series"
-            title="TV Series"
-          />
-          <NavLink
             icon={<PlaylistPlayIcon className="navIcon" />}
-            href="/wishlist"
-            title="Wishlist"
+            href="/watchlist"
+            title="WatchList"
           />
           <NavLink
             icon={<FavoriteIcon className="navIcon" />}

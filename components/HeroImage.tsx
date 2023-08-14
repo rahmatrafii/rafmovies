@@ -32,7 +32,7 @@ const HeroImage = ({ movie }: any) => {
           >
             <PlayCircleOutlineIcon />
           </Button>
-          <Button styles="Navbackground hover:shadow-md " title="Whislist">
+          <Button styles="Navbackground hover:shadow-md " title="WatchList">
             <AddCircleOutlineIcon />
           </Button>
         </div>

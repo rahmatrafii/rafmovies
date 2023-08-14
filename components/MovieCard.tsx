@@ -9,17 +9,17 @@ const MovieCard = (props: MovieCardType) => {
   const { movie, styles } = props;
   return (
     <div
-      className={`${styles}  h-[210px]  md:h-[300px] rounded-lg overflow-hidden m-2 hover:shadow-md hover:shadow-color3 transition-all duration-300 bg-slate-800`}
+      className={`${styles}  h-[190px]  md:h-[240px] lg:h-[265px] xl:h-[300px] rounded-lg overflow-hidden m-2 hover:shadow-md hover:shadow-color3 transition-all duration-300 bg-slate-800`}
     >
       <Link href={`/movie/${movie.id}`}>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
           alt=""
-          className="w-full h-[70%]  object-cover"
+          className="w-full h-[65%]  object-cover"
         />
       </Link>
-      <div className="p-1 h-[30%] flex flex-col justify-evenly md:p-3">
-        <div className="flex items-center gap-x-1">
+      <div className="p-[5px] h-[30%] flex flex-col justify-start items-start md:p-3">
+        <div className="flex items-center gap-x-1 mb-1">
           <Image
             src={star}
             width={20}
@@ -32,7 +32,7 @@ const MovieCard = (props: MovieCardType) => {
           </span>
         </div>
         <h1 className="text-white text-xs md:text-sm xl:text-base">
-          {movie.original_title.slice(0, 30)}
+          {movie.original_title.slice(0, 20)}
         </h1>
       </div>
     </div>

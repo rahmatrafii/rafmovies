@@ -31,7 +31,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className=" w-[30%]">
+          <div className="w-full md:w-[30%]">
             <h3 className="text-xl text-slate-100 mb-2">Follow Me</h3>
             <div className="flex gap-x-4 mt-7">
               <FooterIcon title="facebook" />
