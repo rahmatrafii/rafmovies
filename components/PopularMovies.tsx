@@ -8,11 +8,11 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SlideMovies from "./SlideMovies";
 const PopularMovies = ({ movies }: any) => {
-  let popularMovies = [];
-  for (let index = 0; index < 5; index++) {
-    popularMovies.push(movies[index]);
-  }
+  const topFive = movies
+    .filter((movie: any) => movie.backdrop_path !== null)
+    .slice(5, 10);
   return (
     <section className="pt-10 ">
       <div className="container mx-auto px-4">
@@ -25,38 +25,7 @@ const PopularMovies = ({ movies }: any) => {
           </div>
         </div>
         <div>
-          <Swiper
-            slidesPerView={3}
-            centeredSlides={false}
-            slidesPerGroupSkip={1}
-            grabCursor={true}
-            keyboard={{
-              enabled: true,
-            }}
-            breakpoints={{
-              940: {
-                slidesPerView: 4,
-                slidesPerGroup: 2,
-              },
-              1104: {
-                slidesPerView: 5,
-                slidesPerGroup: 2,
-              },
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-            className="mySwiper"
-          >
-            <div className="Swiper p-9">
-              {popularMovies.map((movie, index) => (
-                <SwiperSlide key={index}>
-                  <MovieCard movie={movie} />
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
+          <SlideMovies movies={topFive} />
         </div>
       </div>
     </section>

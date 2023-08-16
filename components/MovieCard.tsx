@@ -28,11 +28,12 @@ const MovieCard = (props: MovieCardType) => {
             alt="star"
           />
           <span className="text-white text-xs md:text-sm xl:text-base">
-            {movie.vote_average.toFixed(1)}
+            {movie.vote_average !== undefined && movie.vote_average.toFixed(1)}
           </span>
         </div>
         <h1 className="text-white text-xs md:text-sm xl:text-base">
-          {movie.original_title.slice(0, 20)}
+          {movie.original_title !== undefined &&
+            movie.original_title.slice(0, 20)}
         </h1>
       </div>
     </div>

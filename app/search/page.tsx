@@ -1,25 +1,42 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { FaSearch } from "react-icons/fa";
 import { useState, useEffect, SyntheticEvent } from "react";
 import { getMovies, getPopular } from "@/utils";
 import MovieCard from "@/components/MovieCard";
+import { useSearchParams, useRouter } from "next/navigation";
 export default function Search() {
+  const searchParams = useSearchParams();
+  const searchParamsValue = searchParams.get("search");
+  const search: string = searchParamsValue !== null ? searchParamsValue : "";
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    if (search !== "") {
+      getSearchParams();
+    } else {
+      getPopularMovies();
+    }
+  }, [search]);
+
+  async function getSearchParams() {
+    const res = await getMovies(search);
+    setMovies(res);
+  }
 
   async function getPopularMovies() {
     const res = await getPopular();
     setMovies(res.results);
   }
-  useEffect(() => {
-    getPopularMovies();
-  }, []);
-
+  const router = useRouter();
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
-    const res = await getMovies(query);
-    setMovies(res);
-    setQuery("");
+    if (query.length >= 1) {
+      router.push(`/search?search=${encodeURIComponent(query)}`);
+    } else {
+      return false;
+    }
   }
   return (
     <section className="md:ml-[195px] pb-20">
@@ -47,7 +64,7 @@ export default function Search() {
         </form>
         <div className="min-h-[70vh]">
           <div className="w-full flex flex-wrap justify-evenly items-center gap-2 pt-5">
-            {Object.keys(movies).length > 0 &&
+            {movies.length > 0 ? (
               movies.map(
                 (movie: any, index: number) =>
                   movie.backdrop_path !== null && (
@@ -57,7 +74,15 @@ export default function Search() {
                       styles="w-[140px] sm:w-[170px] md:-[140px] lg:w-[200px]"
                     />
                   )
-              )}
+              )
+            ) : (
+              <div>
+                <h1 className="text-color3 text-xl font-semibold mt-10">
+                  Oops.. , It seems the video you&apos;re looking for isn&apos;t
+                  here
+                </h1>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import MovieCard from "@/components/MovieCard";
-import { ListMoviesActions } from "@/constants";
+import { ListMoviesHorror } from "@/constants";
 
-const ActionsPage = () => {
+const ComedyPage = () => {
   return (
     <section className="md:ml-[195px] pb-20">
       <div className="container mx-auto px-4">
         <div className="w-full flex flex-wrap justify-evenly items-center gap-2 pt-5">
-          {ListMoviesActions.map(
+          {ListMoviesHorror.map(
             (movie: any, index: number) =>
               movie.backdrop_path !== null && (
                 <MovieCard
@@ -21,4 +21,4 @@ const ActionsPage = () => {
     </section>
   );
 };
-export default ActionsPage;
+export default ComedyPage;

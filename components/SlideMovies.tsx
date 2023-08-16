@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-const SlideMovies = ({ actionMovies }: any) => {
+const SlideMovies = ({ movies }: any) => {
   return (
     <Swiper
       slidesPerView={3}
@@ -34,11 +34,14 @@ const SlideMovies = ({ actionMovies }: any) => {
       className="mySwiper"
     >
       <div className="Swiper p-9">
-        {actionMovies.map((movie: any, index: number) => (
-          <SwiperSlide key={index}>
-            <MovieCard movie={movie} />
-          </SwiperSlide>
-        ))}
+        {movies.map(
+          (movie: any, index: number) =>
+            movie.backdrop_path !== null && (
+              <SwiperSlide key={index}>
+                <MovieCard movie={movie} />
+              </SwiperSlide>
+            )
+        )}
       </div>
     </Swiper>
   );

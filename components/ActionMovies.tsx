@@ -9,9 +9,12 @@ import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ListMoviesActions } from "@/constants/index";
+import SlideMovies from "./SlideMovies";
 
 const ActionsMovies = () => {
-  const topFive = ListMoviesActions.slice(0, 5);
+  const topFive = ListMoviesActions.filter(
+    (movie) => movie.backdrop_path !== null
+  ).slice(0, 5);
 
   return (
     <section className="pt-10 ">
@@ -25,38 +28,7 @@ const ActionsMovies = () => {
           </div>
         </div>
         <div>
-          <Swiper
-            slidesPerView={3}
-            centeredSlides={false}
-            slidesPerGroupSkip={1}
-            grabCursor={true}
-            keyboard={{
-              enabled: true,
-            }}
-            breakpoints={{
-              940: {
-                slidesPerView: 4,
-                slidesPerGroup: 2,
-              },
-              1104: {
-                slidesPerView: 5,
-                slidesPerGroup: 2,
-              },
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-            className="mySwiper"
-          >
-            <div className="Swiper p-9">
-              {topFive.map((movie, index) => (
-                <SwiperSlide key={index}>
-                  <MovieCard movie={movie} />
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
+          <SlideMovies movies={topFive} />
         </div>
       </div>
     </section>
