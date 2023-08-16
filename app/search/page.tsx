@@ -64,7 +64,7 @@ export default function Search() {
         </form>
         <div className="min-h-[70vh]">
           <div className="w-full flex flex-wrap justify-evenly items-center gap-2 pt-5">
-            {movies.length > 0 ? (
+            {movies.length > 0 &&
               movies.map(
                 (movie: any, index: number) =>
                   movie.backdrop_path !== null && (
@@ -74,8 +74,9 @@ export default function Search() {
                       styles="w-[140px] sm:w-[170px] md:-[140px] lg:w-[200px]"
                     />
                   )
-              )
-            ) : (
+              )}
+
+            {movies.length === 0 && (
               <div>
                 <h1 className="text-color3 text-xl font-semibold mt-10">
                   Oops.. , It seems the video you&apos;re looking for isn&apos;t
