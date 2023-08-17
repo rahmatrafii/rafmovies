@@ -36,3 +36,79 @@ body {
 .absolute-centered {
   @apply top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2;
 }
+
+/* loading view */
+@keyframes ldio-0e7ad0teil9t {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ldio-0e7ad0teil9t div {
+  box-sizing: border-box !important;
+}
+.ldio-0e7ad0teil9t > div {
+  position: absolute;
+  width: 144px;
+  height: 144px;
+  top: 28px;
+  left: 28px;
+  border-radius: 50%;
+  border: 16px solid #000;
+  border-color: #892cdc transparent #892cdc transparent;
+  animation: ldio-0e7ad0teil9t 1s linear infinite;
+}
+.ldio-0e7ad0teil9t > div:nth-child(2) {
+  border-color: transparent;
+}
+.ldio-0e7ad0teil9t > div:nth-child(2) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.ldio-0e7ad0teil9t > div:nth-child(2) div:before,
+.ldio-0e7ad0teil9t > div:nth-child(2) div:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: -16px;
+  left: 48px;
+  background: #892cdc;
+  border-radius: 50%;
+  box-shadow: 0 128px 0 0 #892cdc;
+}
+.ldio-0e7ad0teil9t > div:nth-child(2) div:after {
+  left: -16px;
+  top: 48px;
+  box-shadow: 128px 0 0 0 #892cdc;
+}
+.loadingio-spinner-dual-ring-oj6b9qz4fdh {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: rgba(NaN, NaN, NaN, 0);
+  transform: scale(0.4);
+}
+.ldio-0e7ad0teil9t {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-0e7ad0teil9t div {
+  box-sizing: content-box;
+}
+
+@media screen and (min-width: 700px) {
+  .loadingio-spinner-dual-ring-oj6b9qz4fdh {
+    transform: scale(0.7);
+  }
+}

@@ -4,17 +4,17 @@ import ComedyMovies from "@/components/ComedyMovies";
 import DramaMovies from "@/components/DramaMovies";
 import HorrorMovies from "@/components/HorrorMovies";
 import NavSearch from "@/components/NavSearch";
+import PopularMovies from "@/components/PopularMovies";
 import RomanceMovies from "@/components/RomanceMovies";
 
 const Movie = async () => {
   return (
     <section className="md:ml-[195px] pb-20">
       <div className="container px-4 mx-auto">
-        <div>
-          <NavSearch />
-        </div>
-        <ActionsMovies />
+        <NavSearch />
+        <PopularMovies />
         <RomanceMovies />
+        <ActionsMovies />
         <AdventureMovies />
         <ComedyMovies />
         <DramaMovies />

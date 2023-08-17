@@ -1,4 +1,3 @@
-import { getMovies } from "@/utils";
 import MovieCard from "./MovieCard";
 
 const MovieSearchContainer = (data: any) => {

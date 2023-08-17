@@ -5,16 +5,19 @@ import { useState, useEffect, SyntheticEvent } from "react";
 import { getMovies, getPopular } from "@/utils";
 import MovieCard from "@/components/MovieCard";
 import { useSearchParams, useRouter } from "next/navigation";
+import Loading from "@/components/Loading";
 export default function Search() {
   const searchParams = useSearchParams();
   const searchParamsValue = searchParams.get("search");
   const search: string = searchParamsValue !== null ? searchParamsValue : "";
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+  const [moviesExist, setMoviesExist] = useState("wait");
 
   useEffect(() => {
     if (search !== "") {
       getSearchParams();
+      setQuery(search);
     } else {
       getPopularMovies();
     }
@@ -22,12 +25,18 @@ export default function Search() {
 
   async function getSearchParams() {
     const res = await getMovies(search);
-    setMovies(res);
+    if (res.results.length > 0) {
+      setMovies(res.results);
+      setMoviesExist("true");
+    } else {
+      setMoviesExist("false");
+    }
   }
 
   async function getPopularMovies() {
     const res = await getPopular();
     setMovies(res.results);
+    setMoviesExist("true");
   }
   const router = useRouter();
   async function handleSubmit(e: SyntheticEvent) {
@@ -38,6 +47,7 @@ export default function Search() {
       return false;
     }
   }
+
   return (
     <section className="md:ml-[195px] pb-20">
       <div className="container mx-auto px-4">
@@ -64,7 +74,7 @@ export default function Search() {
         </form>
         <div className="min-h-[70vh]">
           <div className="w-full flex flex-wrap justify-evenly items-center gap-2 pt-5">
-            {movies.length > 0 &&
+            {moviesExist === "true" &&
               movies.map(
                 (movie: any, index: number) =>
                   movie.backdrop_path !== null && (
@@ -76,9 +86,11 @@ export default function Search() {
                   )
               )}
 
-            {movies.length === 0 && (
+            {moviesExist === "wait" && <Loading />}
+
+            {moviesExist === "false" && (
               <div>
-                <h1 className="text-color3 text-xl font-semibold mt-10">
+                <h1 className="text-color3 md:text-lg text-sm text-center font-semibold mt-10">
                   Oops.. , It seems the video you&apos;re looking for isn&apos;t
                   here
                 </h1>

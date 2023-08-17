@@ -28,7 +28,7 @@ export const getMovies = async (search: string) => {
       `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=ca38b7f68b961d1bb2f1a064e3655b6d&language=en`
     );
     const data = await res.json();
-    return data.results;
+    return data;
   } catch (error) {
     console.log(error);
   }

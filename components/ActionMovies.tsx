@@ -17,7 +17,7 @@ const ActionsMovies = () => {
   ).slice(0, 5);
 
   return (
-    <section className="pt-10 ">
+    <section className="">
       <div className="container mx-auto px-4">
         <div>
           <div className="sm:text-xl md:text-2xl border-l-2 border-white pl-3 text-base  my-4 whitespace-nowrap text-white flex items-center justify-between">

@@ -14,7 +14,7 @@ const MovieCard = (props: MovieCardType) => {
       <Link href={`/movie/${movie.id}`}>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-          alt=""
+          alt={movie.original_title}
           className="w-full h-[65%]  object-cover"
         />
       </Link>

@@ -7,14 +7,14 @@ const NavSearch = () => {
   const [query, setQuery] = useState("");
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (query.length <= 3) {
-      return alert("masukkan dulu");
-    } else {
+    if (query.length >= 1) {
       router.push(`/search?search=${encodeURIComponent(query)}`);
+    } else {
+      return false;
     }
   };
   return (
-    <section className=" pt-4">
+    <section className=" py-5">
       <div className="container mx-auto px-4">
         <div className="relative w-full flex-col sm:flex-row justify-between mb-5 flex items-center">
           <h1 className="lg:text-[40px] my-2 sm:text-[25px] text-[20px] text-color3 ">

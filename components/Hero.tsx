@@ -5,17 +5,13 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import HeroImage from "./HeroImage";
-import NavSearch from "./NavSearch";
 const Hero = ({ movies }: any) => {
   const topFive = movies
     .filter((movie: any) => movie.backdrop_path !== null)
     .slice(0, 5);
   return (
-    <section className=" pt-4">
+    <section className="py-5">
       <div className="container mx-auto px-4">
-        <div>
-          <NavSearch />
-        </div>
         <div className=" flex">
           <Swiper
             slidesPerView={1}
