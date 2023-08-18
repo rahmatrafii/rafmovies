@@ -1,7 +1,6 @@
 "use client";
 import { ImHome } from "react-icons/im";
 import { BiSolidCameraMovie } from "react-icons/bi";
-import LiveTvIcon from "@mui/icons-material/LiveTv";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import NavLink from "./NavLink";

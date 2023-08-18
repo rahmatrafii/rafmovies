@@ -1,16 +1,7 @@
-"use client";
 import Link from "next/link";
 import React from "react";
-import MovieCard from "./MovieCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/scrollbar";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { ListMoviesActions } from "@/constants/index";
 import SlideMovies from "./SlideMovies";
-
 const ActionsMovies = () => {
   const topFive = ListMoviesActions.filter(
     (movie) => movie.backdrop_path !== null

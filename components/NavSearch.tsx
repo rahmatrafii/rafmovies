@@ -1,18 +1,29 @@
 "use client";
 import { FaSearch } from "react-icons/fa";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+
 const NavSearch = () => {
   const router = useRouter();
   const [query, setQuery] = useState("");
+  const searchParams = useSearchParams();
+  const searchParamsValue = searchParams.get("search");
+  const search: string = searchParamsValue !== null ? searchParamsValue : "";
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    const query = e.target.query.value;
     if (query.length >= 1) {
       router.push(`/search?search=${encodeURIComponent(query)}`);
     } else {
       return false;
     }
   };
+
+  useEffect(() => {
+    setQuery(search);
+  }, [search]);
+
   return (
     <section className=" py-5">
       <div className="container mx-auto px-4">
@@ -28,6 +39,7 @@ const NavSearch = () => {
               type="text"
               placeholder="Search your Movies..."
               value={query}
+              name="query"
               onChange={(e) => setQuery(e.target.value)}
               className="Navbackground sm:w-[300px] lg:w-[400px] xl:w-[600px] sm:px-5 px-3 py-4 h-[36px] md:h-[40px] border-none bg-slate-100 rounded-sm focus:outline-none focus:border-none shadow-lg active:outline-none active:border-none hover:shadow-color3 transition-all mr-4 text-slate-100 text-[16px]"
             />

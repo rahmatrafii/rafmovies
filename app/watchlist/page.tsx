@@ -1,5 +1,7 @@
 import ComingSoon from "@/components/ComingSoon";
-
+export const metadata = {
+  title: "wishlist",
+};
 const wishlist = () => {
   return (
     <div>

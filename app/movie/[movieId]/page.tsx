@@ -4,6 +4,9 @@ import love from "@/public/love.svg";
 import star from "@/public/star.svg";
 import Image from "next/image";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+export const metadata = {
+  title: "Movie",
+};
 
 const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
   const movieId: string = params.movieId;
