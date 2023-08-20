@@ -33,16 +33,14 @@ const SlideMovies = ({ movies }: any) => {
       modules={[Keyboard, Scrollbar, Navigation, Pagination]}
       className="mySwiper"
     >
-      <div className="Swiper p-9">
-        {movies.map(
-          (movie: any, index: number) =>
-            movie.backdrop_path !== null && (
-              <SwiperSlide key={index}>
-                <MovieCard movie={movie} />
-              </SwiperSlide>
-            )
-        )}
-      </div>
+      {movies.map(
+        (movie: any, index: number) =>
+          movie.backdrop_path !== null && (
+            <SwiperSlide key={index} className="mb-6">
+              <MovieCard movie={movie} />
+            </SwiperSlide>
+          )
+      )}
     </Swiper>
   );
 };

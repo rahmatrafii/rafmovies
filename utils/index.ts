@@ -42,27 +42,3 @@ export const getMovies = async (search: string) => {
     console.log(error);
   }
 };
-
-// import { adventurePopular } from "@/constants/index";
-// async function fetchMovies(adventurePopular: any[]) {
-//   const results = [];
-
-//   for (const title of adventurePopular) {
-//     try {
-//       const response = await fetch(
-//         `https://api.themoviedb.org/3/search/movie?query=${title}&api_key=ede6829518609ae3c2510ae6957453ff&language=en`
-//       );
-//       const data = await response.json();
-//       results.push(data);
-//     } catch (error) {
-//       console.error(`Error fetching movie ${title}:`, error);
-//     }
-//   }
-
-//   return results;
-// }
-// (async () => {
-//   const moviesData: any = await fetchMovies(adventurePopular);
-//   const movies = moviesData.results;
-//   console.log("Movies Data:", moviesData);
-// })();

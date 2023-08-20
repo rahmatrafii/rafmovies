@@ -1,6 +1,6 @@
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import Button from "./Button";
+
+import ButtonWatchList from "./ButtonWatchList";
 import { useRouter } from "next/navigation";
 const HeroImage = ({ movie }: any) => {
   const router = useRouter();
@@ -25,16 +25,20 @@ const HeroImage = ({ movie }: any) => {
           {`${movie.overview.slice(0, 180)}...`}
         </p>
         <div className="flex gap-x-5 flex-col sm:flex-row gap-y-3">
-          <Button
-            title="Watch Now"
-            styles="hover:bg-color2 bg-color3 hover:shadow-md hover:shadow-color3"
+          <button
+            className="Navbackground hover:shadow-md whitespace-nowrap md:px-8  md:py-3 py-1 px-3 flex items-center gap-x-3 transition duration-300  border-none rounded-sm shadow-md text-[14px]"
             onClick={handleClick}
           >
             <PlayCircleOutlineIcon />
-          </Button>
-          <Button styles="Navbackground hover:shadow-md " title="WatchList">
-            <AddCircleOutlineIcon />
-          </Button>
+            Watch Now
+          </button>
+
+          {/* <ButtonWatchList
+            id={movie.id}
+            styles="Navbackground hover:shadow-md "
+          >
+            WatchList
+          </ButtonWatchList> */}
         </div>
       </div>
     </div>

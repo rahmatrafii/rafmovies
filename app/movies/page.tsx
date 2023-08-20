@@ -11,9 +11,8 @@ export const metadata = {
 };
 const Movie = async () => {
   return (
-    <section className="md:ml-[195px] pb-20">
+    <section className="md:ml-[195px] pb-20 pt-8">
       <div className="container px-4 mx-auto">
-        <NavSearch />
         <PopularMovies />
         <RomanceMovies />
         <ActionsMovies />

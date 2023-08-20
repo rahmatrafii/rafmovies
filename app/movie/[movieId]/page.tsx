@@ -1,9 +1,9 @@
 import { getDetailMovie } from "@/utils";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import love from "@/public/love.svg";
 import star from "@/public/star.svg";
 import Image from "next/image";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ButtonWatchList from "@/components/ButtonWatchList";
+import ButtonLove from "@/components/ButtonLove";
 export const metadata = {
   title: "Movie",
 };
@@ -12,6 +12,7 @@ const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
   const movieId: string = params.movieId;
   const data = await getDetailMovie(movieId);
   const year = data.release_date.split("-");
+
   return (
     <section className="pb-20 md:ml-[190px]">
       <div className="container  mx-auto px-4">
@@ -30,15 +31,7 @@ const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
               {data.original_title}{" "}
               <span className="font-light">({year[0]})</span>
             </h1>
-            <button type="button">
-              <Image
-                src={love}
-                alt="love"
-                width={40}
-                height={40}
-                className="md:w-[45px] md:h-[45px] "
-              />
-            </button>
+            <ButtonLove id={data.id} />
           </div>
 
           <div className="mb-5">
@@ -72,10 +65,12 @@ const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
           </div>
 
           <div className="flex w-full justify-end lg:justify-start">
-            <button className="hover:bg-color2 bg-color3 hover:shadow-md hover:shadow-color3 whitespace-nowrap md:px-8  md:py-3 py-1 px-3 flex items-center gap-x-3 transition duration-300  border-none rounded-sm shadow-md text-[14px] text-white">
-              <AddCircleOutlineIcon />
+            <ButtonWatchList
+              styles="hover:bg-color2 bg-color3 hover:shadow-md hover:shadow-color3 whitespace-nowrap md:px-8  md:py-3 py-1 px-3 flex items-center gap-x-3 transition duration-300  border-none rounded-sm shadow-md text-[14px] text-white"
+              id={data.id}
+            >
               WatchList
-            </button>
+            </ButtonWatchList>
           </div>
         </div>
       </div>
