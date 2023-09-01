@@ -6,7 +6,7 @@ export const metadata = {
 };
 const wishlist = () => {
   return (
-    <section className="md:ml-[195px] min-h-[600px] pb-20">
+    <section className=" md:ml-[70px] min-h-[600px] pb-20">
       <div className="container mx-auto px-4">
         <NavSearch />
         <ContentWatchList />

@@ -9,7 +9,7 @@ export default async function Home() {
   const resPopular = await getPopular();
   const moviesPopular = resPopular.results;
   return (
-    <div className="md:ml-[195px] pb-10">
+    <div className="md:ml-[70px] pb-10">
       <NavSearch />
       <Hero movies={moviesPopular} />
       <PopularMovies />

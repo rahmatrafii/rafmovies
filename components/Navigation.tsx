@@ -8,7 +8,7 @@ import { FaSearch } from "react-icons/fa";
 
 const DesktopNavigation = () => {
   return (
-    <header className="z-[9999] Navbackground fixed md:top-0 md:left-0  md:h-screen  md:pt-10 bottom-0 left-0  h-[60px] w-full md:w-[180px] xl:w-[190px] mr-20">
+    <header className="z-[9999] group Navbackground fixed md:top-0 md:left-0  md:h-screen  md:pt-10 bottom-0 left-0  h-[60px] w-full md:w-[70px] md:hover:w-[190px] transition-all duration-300 overflow-hidden  mr-20">
       <div className="container mx-auto px-4">
         <div className="flex md:flex-col md:gap-y-5 justify-evenly items-start">
           <NavLink

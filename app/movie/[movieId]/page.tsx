@@ -14,7 +14,7 @@ const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
   const year = data.release_date.split("-");
 
   return (
-    <section className="pb-20 md:ml-[190px]">
+    <section className="  md:ml-[70px] pb-20 ">
       <div className="container  mx-auto px-4">
         <div className="relative my-6 h-[300px] md:h-[400px] lg:h-[450px] xl:h-[550px]">
           <img
