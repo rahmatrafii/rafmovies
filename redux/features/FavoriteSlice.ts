@@ -17,6 +17,7 @@ function parseString(props: any): any {
 }
 
 const listID = parseString(localStorage.getItem("favoriteList"));
+console.log(listID);
 const initialState = {
   id: listID,
 } as InitialState;

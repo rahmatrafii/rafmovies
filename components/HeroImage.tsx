@@ -1,6 +1,4 @@
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-
-import ButtonWatchList from "./ButtonWatchList";
 import { useRouter } from "next/navigation";
 const HeroImage = ({ movie }: any) => {
   const router = useRouter();

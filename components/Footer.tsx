@@ -4,7 +4,7 @@ import FooterIcon from "./FooterIcon";
 const Footer = () => {
   return (
     <footer className="mb-[70px] md:ml-[70px] md:mb-4">
-      <div className="container mx-auto px-5 ">
+      <div className=" mx-auto px-5 ">
         <div className="pt-10 border-t-2 border-slate-500 md:flex md:justify-between md:flex-1 md:items-start">
           <div className="mb-5  pr-8 py-2  w-[50%]">
             <h3 className="text-2xl text-slate-100 mb-2">RafMovies</h3>

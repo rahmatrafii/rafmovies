@@ -6,9 +6,8 @@ export const metadata = {
 const Favorite = () => {
   return (
     <div>
-      <section className="md:ml-[70px] min-h-[600px] pb-20">
-        <div className="container mx-auto px-4">
-          <NavSearch />
+      <section className=" min-h-[600px] pb-20">
+        <div className="w-full mx-auto px-4">
           <ContentFavorite />
         </div>
       </section>

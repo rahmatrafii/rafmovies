@@ -4,9 +4,8 @@ import { ListMoviesAdventure } from "@/constants";
 
 const ComedyPage = () => {
   return (
-    <section className="md:ml-[195px]  pb-20">
-      <div className="container mx-auto px-4">
-        <NavSearch />
+    <section className="  pb-20">
+      <div className=" mx-auto px-4">
         <div className="w-full flex flex-wrap justify-evenly items-center gap-2 pt-5">
           {ListMoviesAdventure.map(
             (movie: any, index: number) =>

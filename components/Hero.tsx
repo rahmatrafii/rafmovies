@@ -11,7 +11,7 @@ const Hero = ({ movies }: any) => {
     .slice(0, 5);
   return (
     <section className="py-5">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className=" flex">
           <Swiper
             slidesPerView={1}

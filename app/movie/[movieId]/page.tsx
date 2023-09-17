@@ -14,8 +14,8 @@ const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
   const year = data.release_date.split("-");
 
   return (
-    <section className="  md:ml-[70px] pb-20 ">
-      <div className="container  mx-auto px-4">
+    <section className="pb-20 ">
+      <div className="w-full  mx-auto px-4">
         <div className="relative my-6 h-[300px] md:h-[400px] lg:h-[450px] xl:h-[550px]">
           <img
             src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}

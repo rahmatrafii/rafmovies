@@ -7,14 +7,13 @@ const NavSearch = () => {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const searchParams = useSearchParams();
-  const searchParamsValue = searchParams.get("search");
+  const searchParamsValue = searchParams.get("q");
   const search: string = searchParamsValue !== null ? searchParamsValue : "";
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const query = e.target.query.value;
     if (query.length >= 1) {
-      router.push(`/search?search=${encodeURIComponent(query)}`);
+      router.push(`/search?q=${encodeURIComponent(query)}`);
     } else {
       return false;
     }
@@ -25,8 +24,8 @@ const NavSearch = () => {
   }, [search]);
 
   return (
-    <section className=" py-5">
-      <div className="container mx-auto px-4">
+    <section className="py-5">
+      <div className=" mx-auto px-4">
         <div className="relative w-full flex-col sm:flex-row justify-between mb-5 flex items-center">
           <h1 className="lg:text-[40px] my-2 sm:text-[25px] text-[20px] text-color3 ">
             RafMovies
